@@ -24,9 +24,9 @@ def movimento_ia(board, jogador):
     melhor_movimento = None
 
     for possibilidade in possibilidades:
-        board[possibilidade[0]possibilidade[1]] = token[jogador]
+        board[possibilidade[0]][possibilidade[1]] = token[jogador]
         valor = minimax(board, jogador)
-        board[possibilidade[0]possibilidade[1]] = branco
+        board[possibilidade[0]][possibilidade[1]] = branco
 
         if melhor_valor is None:
             melhor_valor = valor
@@ -54,10 +54,10 @@ def minimax(board, jogador):
     melhor_valor = None
 
     for possibilidade in possibilidades:
-        board[possibilidade[0]possibilidade[1]] = token[jogador]
+        board[possibilidade[0]][possibilidade[1]] = token[jogador]
         valor = minimax(board, jogador)
-        board[possibilidade[0]possibilidade[1]] = branco
-
+        board[possibilidade[0]][possibilidade[1]] = branco
+        
         if melhor_valor is None:
             melhor_valor = valor
         elif jogador == 0:
@@ -68,4 +68,3 @@ def minimax(board, jogador):
                 melhor_valor = valor
     
     return melhor_valor
-
